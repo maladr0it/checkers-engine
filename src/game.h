@@ -1,5 +1,7 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef GAME_H
+#define GAME_H
+
+#include <stdbool.h>
 
 #define BOARD_SIZE 8
 
@@ -41,5 +43,11 @@ struct Move
     int toX;
     int toY;
 };
+
+bool compareBoards(struct Board *a, struct Board *b);
+
+int getBoardCost(struct Board *board, enum Player player);
+
+enum MoveError makeMove(struct Board *board, enum Player player, struct Move move);
 
 #endif
